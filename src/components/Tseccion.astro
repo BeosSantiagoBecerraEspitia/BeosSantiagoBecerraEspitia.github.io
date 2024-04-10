@@ -1,0 +1,47 @@
+---
+interface Props {
+        titulo:string;
+	}
+
+const {titulo} = Astro.props;
+---
+<div class="titulo_seccion">
+    <div class="contenido">
+        <h2>
+            {titulo}
+        </h2>
+        <div class="linea">
+
+        </div>
+    </div>
+    
+</div>	
+<style>
+.titulo_seccion{
+		width: 100%;
+		margin: auto;
+        margin-bottom: 30px;
+        justify-content: center;
+        display: flex;
+	}
+
+    .contenido{
+        width: fit-content;
+    }
+
+	.linea{
+		width: 70vw;
+		height: 4px;
+		background: rgb(79,0,255);
+		background: linear-gradient(90deg, rgba(79,0,255,1) 27%, rgba(255,255,255,1) 82%);
+		border-radius: 50px;
+		filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+	}
+
+    @media (min-height: 100vw){
+        .linea{
+            width: 85vw;
+        }
+    }
+</style>

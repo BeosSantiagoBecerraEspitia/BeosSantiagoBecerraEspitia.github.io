@@ -1,0 +1,76 @@
+---
+import type { ImageMetadata } from 'astro';
+import { Image } from "astro:assets";
+
+
+	interface Props {
+		nombre: string;
+		imagePath:string;
+		correccionvertical?:string;
+		
+	}
+
+const { nombre , imagePath , correccionvertical} = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>('../multimedia/images/*/*.{jpeg,jpg,png,gif,webp}')
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif} la imagen no existe"`);
+---
+
+
+<div class="icon flex">
+	<div class="movimiento">
+		<div class="enfoque">
+			<Image src={images[imagePath]()} alt={nombre}></Image>
+		</div>
+		
+	</div>
+</div>
+
+<style define:vars={{ correccionvertical }}>
+
+
+.icon{
+	align-items: center;
+	justify-content: center;
+	width:15vh;
+	transform: translate(0px, var(--correccionvertical));
+	margin:1vw;
+	mix-blend-mode:plus-lighter;
+		filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+	user-select: none;
+}
+
+.movimiento{
+	animation: mover-arriba-abajo 3s ease-in-out infinite;
+	
+}
+.enfoque{
+	transition: transform 0.3s ease;
+}
+
+.enfoque:hover{
+	transform:scale(1.1);
+}
+
+@keyframes mover-arriba-abajo {
+  0% {
+    transform: translateY(0); /* Sin movimiento */
+  }
+  50% {
+    transform: translateY(-10px); /* Movimiento hacia arriba */
+  }
+  100% {
+    transform: translateY(0); /* Regresar a la posición inicial */
+  }
+}
+
+@media (min-height: 100vw), (max-width: 640px){
+	.icon{
+		width: 25vw;
+	}
+
+
+}
+
+
+</style>

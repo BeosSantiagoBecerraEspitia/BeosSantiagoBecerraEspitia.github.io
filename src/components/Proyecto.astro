@@ -1,0 +1,213 @@
+---
+
+import { Image } from "astro:assets";
+
+import Github from "../multimedia/images/logos/github_logo2.png";
+
+	interface Props {
+		projectName: string;
+		projetLink:string;
+    descripcion : string ;
+        
+	}
+
+const { projectName , projetLink , descripcion } = Astro.props;
+---
+
+<div class="hovi">
+  <div class="ProyectCard">
+    <div class="ProyectTitle">
+       <a href={projetLink}>{projectName} <?xml version="1.0" ?></a> 
+       
+    </div>
+    <div class="ProyectContent text-md xl:text-2xl lg:text-xl sm:text-sm">
+        <p>
+            {descripcion} 
+        </p>
+        
+    </div>
+    <div class="lenguajesygit">
+      <div class="gitlogo">
+        <a href={projetLink}><Image src={Github} alt="githubproyect"></Image></a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+<style>
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  
+  --ProyectCard-width:30vw ;
+  --ProyectCard-height:calc(var(--ProyectCard-width) / 1.5);
+  --veintealtura:calc(var(--ProyectCard-height)/5);
+}
+
+
+.ProyectCard {
+  background: #000b3d;
+  width: var(--ProyectCard-width);
+  height: var(--ProyectCard-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.945);
+  flex-wrap: wrap;
+  margin-top:5vw ;
+  margin: 3vw;
+  
+  z-index: auto;
+
+}
+.hovi{
+  transition: transform 0.3s ease;
+}
+.hovi:hover{
+	transform:scale(1.1);
+  z-index: inherit;
+}
+
+
+.ProyectTitle{
+width: 80%;
+height: var(--veintealtura);
+align-items: center;
+display: flex;
+overflow: hidden; /* Oculta el texto que sobresale del contenedor */
+text-overflow: ellipsis;
+font: 3vw 'Ubuntu Mono' ,monospace;
+font-weight: bold;
+margin-left: auto;
+margin-right: auto;
+text-decoration-line: underline;
+}
+
+.ProyectContent{
+height:calc(var(--veintealtura)*2.8);
+width: 80%;
+margin: 2%;
+font: 2vw 'Ubuntu Mono' ,monospace;
+margin: auto;
+}
+
+
+.ProyectCard::before {
+  content: "";
+  width: 101%;
+  height: 102%;
+  border-radius: 8px;
+  background-image: linear-gradient(
+    var(--rotate)
+    , #d8f7ff, #cad0e0 43%, #746886);
+    position: absolute;
+    z-index: -2;
+    top: -1%;
+    left: -0.5%;
+    animation: spin 2.5s linear infinite;
+    -webkit-box-shadow: 13px 13px 33px #09001d, -13px -13px 33px #230075;
+box-shadow: 13px 13px 33px #09001d, -13px -13px 33px #230075;
+}
+
+.ProyectCard::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: -2;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  transform: scale(0.8);
+  filter: blur(calc(var(--ProyectCard-width) / 6));
+  background-image: linear-gradient(
+    var(--rotate)
+    , #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+  transition: opacity .5s;
+  animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
+
+@media (min-height: 80vw),(max-width: 640px){
+    :root {
+        
+        --ProyectCard-width:70vw;
+        --ProyectCard-height:calc(var(--ProyectCard-width) / 1.5);
+      }
+}
+
+@media (min-height: 120vw), (max-width: 640px) {
+    :root {
+        
+  --ProyectCard-width:86vw;
+  --ProyectCard-height:calc(var(--ProyectCard-width) / 1.5);
+}
+
+
+.ProyectCard{
+    margin: 0%;
+    margin-top: 5%;
+    min-width: var(--ProyectCard-width);
+}
+
+.gitlogo{
+
+  min-width: 40px;
+  min-height: 40PX;
+}
+
+
+.ProyectTitle{
+  font-size: 70%;
+}
+
+.ProyectContent{
+  font-size: 40%;
+}
+
+}
+
+
+
+.lenguajesygit{
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height:var(--veintealtura);
+    margin: auto;
+    
+}
+.gitlogo{
+  display: flex;
+  position: relative;
+  z-index: 2;
+  max-width: 40px;
+  max-height:40px;
+  width: 3vw;
+  min-height:calc(40px - 40vw);
+  min-width:calc(40px - 4vw);
+  
+}
+.gitlogo img{
+  width: 100%;
+  height: 100%;
+}
+</style>

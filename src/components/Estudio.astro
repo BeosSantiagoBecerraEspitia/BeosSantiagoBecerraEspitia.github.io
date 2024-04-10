@@ -1,0 +1,78 @@
+---
+
+interface Props {
+		titulo: string;
+		institucion:string;
+        fecha: string ;
+		certificado?:string;
+        
+	}
+
+const { titulo , institucion , fecha , certificado} = Astro.props;
+
+---
+
+<div class="tarjeta">
+	<div class="titulo">
+			{titulo}
+	</div>
+	<div class="subtitulo">
+		{institucion}
+	</div>
+	<div class="fecha">
+		{fecha}
+	</div>
+</div>
+
+<style>
+.tarjeta{
+	min-width: 90%;
+	background: rgba(33, 6, 102, 0.753);
+	box-shadow: 5px 5px 8px #17054548, -5px -5px 8px #17054749;
+	min-height: 120px;
+
+	margin: 20px;
+
+border-radius: 2px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+
+}
+
+.tarjeta:hover{
+	transform:scale(1.05);
+	filter: contrast(110%) 
+			drop-shadow(0px 0px 10px rgba(76, 0, 255, 0.692));
+			transition: transform 0.3s ease;
+			box-shadow: 10px 10px 8px #17054548, -10px -10px 8px #17054748;
+}
+
+
+.titulo{
+	color: rgb(250, 253, 255);
+	text-overflow: ellipsis;
+	font: 80% 'Ubuntu Mono' ,monospace;
+	font-weight: bold;
+	margin: 10px;
+	overflow: hidden;
+}
+
+.subtitulo{
+	color: rgb(191, 209, 221);
+	text-overflow: ellipsis;
+	font: 70% 'Ubuntu Mono' ,monospace;
+	margin: 10px;
+	margin-top: 2px;
+	overflow: hidden;
+}
+
+.fecha{
+	color: rgb(191, 209, 221);
+	text-overflow: ellipsis;
+	font: 55% 'Ubuntu Mono' ,monospace;
+	margin: 10px;
+	margin-top: 2px;
+	overflow: hidden;
+}
+</style>
+

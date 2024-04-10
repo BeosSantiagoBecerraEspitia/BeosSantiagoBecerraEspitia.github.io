@@ -1,0 +1,108 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+import Ciudad from "../multimedia/images/Bogota.svg";
+import Linkedin from "../multimedia/images/logos/linkedinlogo.png";
+import Github from "../multimedia/images/logos/GitHublogo.png";
+import Duolingo from "../multimedia/images/logos/duolingologo.svg";
+---
+
+<div>
+    <div class="imagenes">
+        <div class="img1">
+            <Image src={Ciudad} alt="footer"/>
+        </div>
+        <div class="img2">
+            <Image src={Ciudad} alt="footer"/>
+        </div>
+    </div>
+    <div class="cuadro_informativo">
+        <div class="autor">
+            <p>Designed by: <br> Beos Santiago Becerra Espitia</p>
+        </div>
+        <div class="origen">
+                <p>@Colombia 2024</p>
+        </div>
+        <div class="rrss">
+            <a href="https://www.linkedin.com/in/beos-santiago-becerra-espitia-779764202" target="_blank"><Image src={Linkedin} alt="linkedin" /></a>
+            <a href="https://github.com/BeosSantiagoBecerraEspitia" target="_blank"><Image src={Github} alt="GitHub" /></a>
+            <a href="https://www.duolingo.com/profile/Batman598377?via=share_profile_link" target="_blank"><Image src={Duolingo} alt="Duolingo" /></a>
+        </div>
+    </div>
+</div>
+
+
+<style>
+    .imagenes {
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: nowrap;
+        
+        z-index: -2;
+        user-select: none;
+        filter: drop-shadow(0px 10px 50px rgba(245, 252, 255, 0.267) );
+        overflow: hidden;
+        position: relative;
+        justify-content: space-between;
+    }
+
+
+    .img1 {
+        transform: scaleX(-1) scaleY(1.01);
+        
+        width: 40%;
+    }
+    .img2{
+        width: 40%;
+    }
+
+    .cuadro_informativo {
+        background-color: black;
+        height: 20vh;
+        width: 100%;
+        z-index: 4;
+        display: flex;
+        flex-wrap:wrap;
+        justify-content: center;    
+    }
+    .autor{
+        color: aliceblue;
+        align-items: center;
+        text-align: center;
+        text-justify: center;
+        display: flex;
+        justify-content: center;  
+        width: 33%;
+    }
+
+    .origen{
+        color: aliceblue;
+        align-items: center;
+        text-align: center;
+        text-justify: center;
+        display: flex;
+        justify-content: center;  
+        width: 33%;
+    }
+    .rrss img{
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+    }
+
+    a{
+        max-width:40px;
+        max-height: 40px;
+        margin: 5px;
+    }
+
+    .rrss{
+        width: 33%;
+        flex-wrap: wrap;
+        height: 100%;
+        width: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>

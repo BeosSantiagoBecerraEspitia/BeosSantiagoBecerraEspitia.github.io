@@ -1,0 +1,248 @@
+---
+interface Props {}
+---
+<div class="flex justify-center w-100">
+    <header>
+        <ul>
+            <li><a href="#Quiensoy">Quien soy </a></li>
+            <li><a href="#Stack">Mi stack</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#Estudios">Estudios</a></li>
+            <li><a href="#Experiencia">Experiencia</a></li>
+        </ul>
+    </header>
+    
+</div>
+
+<div class="hamburger-menu">
+    <input id="menu__toggle" type="checkbox" />
+    <label class="menu__btn" for="menu__toggle">
+      <span></span>
+    </label>
+<div class="menulateral">
+    <ul class="menu__box">
+        <li><a href="#Quiensoy">Quien soy </a></li>
+        <li><a href="#Stack">Mi stack</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#Estudios">Estudios</a></li>
+        <li><label for="menu__toggle"><a href="#Experiencia" >Experiencia</a></label></li>
+    </ul>
+    <label class="volver" for="menu__toggle"></label>
+</div>
+
+  </div>
+
+<style>
+    html {
+        scroll-behavior: smooth;
+        
+    }
+    body{
+        
+    }
+
+    header {
+       width: 100vw;
+        height: 6rem;
+        backdrop-filter: saturate(200%) blur(20px);
+        background-color: #00000034;
+        position: fixed;
+        z-index: 4;
+        color: aliceblue;
+        top: 0;
+        animation: change linear both;
+        animation-timeline: scroll(root);
+        animation-range: 0 400px;
+        border-top: thick double #ade3f8;
+        border-bottom: thick double #ade3f8;
+        border-width: 1px;
+        
+}
+    
+
+    ul {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    li {
+        color: #ffffff;
+        z-index: 4;
+        position: relative;
+        
+        min-width:10vw;
+        margin: auto;
+        height: 6vh;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+    }
+
+    li a:hover{
+        color: rgb(118, 120, 255);
+    }
+
+    li a{
+        width: 100%;
+        font-size: larger;
+        text-align: center;
+    }
+
+    @keyframes change {
+        from {
+        width: 100vw;
+        height: 6rem;
+        }
+        to{ 
+            width: 80vw;
+            border-radius: 8px;
+            top: 1rem;
+            height: 4rem;
+            margin: auto;
+            border-radius: 1vw;
+            
+            border: thick double #ade3f8;
+
+        }
+    }
+
+    .hamburger-menu{
+        display: none;
+        z-index: 5;
+    }
+
+    @media (min-height: 100vw){
+        .hamburger-menu{
+        display:flex;
+    }
+
+    header{
+        display: none;
+    }
+
+    
+    }
+
+    
+
+    #menu__toggle {
+  opacity: 0;
+  position: fixed;
+}
+#menu__toggle:checked + .menu__btn > span {
+  transform: rotate(45deg);
+}
+#menu__toggle:checked + .menu__btn > span::before {
+  top: 0;
+  transform: rotate(0deg);
+}
+#menu__toggle:checked + .menu__btn > span::after {
+  top: 0;
+  transform: rotate(90deg);
+}
+#menu__toggle:checked ~ .menulateral {
+  left: 0 !important;
+  
+}
+
+#menu__toggle:checked~ .menulateral .volver {
+    backdrop-filter: grayscale(50%) brightness(50%);
+    transition-delay: 0.3s;
+    }
+
+    #menu__toggle:not(:checked)~ .menulateral .volver {
+    backdrop-filter: grayscale(0%) brightness(100%);    
+    }
+
+
+.menu__btn {
+  position: fixed;
+  top: 4vw;
+  left: 20px;
+  width: 10vw;
+  height: 10vw;
+  cursor: pointer;
+  z-index: 6;
+}
+.menu__btn > span,
+.menu__btn > span::before,
+.menu__btn > span::after {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  transition-duration: .25s;
+  z-index: 5;
+  filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+            top: 4vw;
+
+}
+.menu__btn > span::before {
+  content: '';
+  top: -4vw;
+  z-index: 5;
+}
+.menu__btn > span::after {
+  content: '';
+  top: 4vw;
+  z-index: 5;
+}
+
+.menulateral{
+    display: flex;
+  position: fixed;
+  top: 0;
+  left: -200%;
+  transition-duration: .3s;
+  z-index: 5;
+  height: 100%;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+
+}
+.menu__box {
+    display: block;
+
+  width: 300px;
+  height: 100%;
+  margin: 0;
+  padding: 80px 0;
+  list-style: none;
+  background-color: hsl(241, 62%, 42%);
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, .4);
+  border-width: 2px;
+  filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+}
+
+
+.volver{
+    display: block;
+    width: calc(100vw - 300px);
+    height: 100%;
+    transition: backdrop-filter 0.1s ease;
+    
+}
+
+
+.menu__item {
+  display: block;
+  padding: 12px 24px;
+ color: aliceblue;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition-duration: .25s;
+  z-index: 5;
+}
+.menu__item:hover {
+  background-color: #CFD8DC;
+  z-index: 5;
+}
+</style>

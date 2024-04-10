@@ -1,0 +1,959 @@
+---
+import Footer from "../components/Footer.astro";
+import Layout from "../layouts/Layout.astro";
+import Icon from "../components/Icon.astro";
+import ExperienceCard from "../components/ExperienceCard.astro";
+import Proyecto from "../components/Proyecto.astro";
+import Header from "../components/Header.astro";
+import Tseccion from "../components/Tseccion.astro";
+import Estudio from "../components/Estudio.astro";
+import { Image } from "astro:assets";
+
+import myImage from "../multimedia/images/foto_perfil1.jpg";
+import Duolingo from "../multimedia/images/logos/duolingoprinc.svg";
+import linkedin from "../multimedia/images/logos/linkedinprince.webp";
+import github from "../multimedia/images/logos/github_icon_princ.png";
+---
+
+<Layout title="Beos Santiago Becerra Portafolio">
+	
+	<Header/>
+	<main>
+		<section >
+		<div class="header-placeholder"></div>
+		
+		<div class="presentacion_principal">
+			
+			<div class="slider_con_titulos flex p-4">
+				<button class="prev" onclick="changeSlide(-1)"></button>
+				<div class="limiteslider ">
+					<div class="nombre m-3">
+						<h1>Beos Becerra</h1>
+					</div>
+					<div
+						class="titulos flex transition-transform duration-300 ease slider mt-3 mb-3 "
+					>
+						<div class="tituloslide">
+							<h1>Desarrollador Full Stack</h1>
+						</div>
+						<div class="tituloslide">
+							<h1>QA</h1>
+						</div>
+						<div class="tituloslide">
+							<h1>Asesor Tecnologico</h1>
+						</div>
+						
+					</div>
+				</div>
+
+				<button class="next" onclick="changeSlide(1)"></button>
+			</div>
+
+	<div class="descripcionyfoto">
+		<div class="profile_picture">
+			<Image src={myImage} alt="profile photo" />
+			
+		</div>
+		<div class="redes" id="Quiensoy">
+			<div class="red "><a target="_blank" href="https://www.linkedin.com/in/beos-santiago-becerra-espitia-779764202"><p>Contactame</p><div class="logo"> <Image src={linkedin} alt="as" /></div></a></div>
+			<div class="red"><a target="_blank" href="https://github.com/BeosSantiagoBecerraEspitia"><p>Conóceme </p><div class="logo"> <Image src={github} alt="as" /></div></a></div>
+			<div class="red"><a target="_blank" href="https://www.duolingo.com/profile/Batman598377?via=share_profile_link"><p>Sigueme </p><div class="logo duo "> <Image src={Duolingo} alt="as" /></div></a></div>
+
+	   </div>
+			<Tseccion  titulo="Quien soy" />
+		<div
+			class="descripcion_profesional text-sm md:text-3xl xl:text-4xl"
+		>
+			<p>
+				¡Hola! Soy Beos Santiago, y estoy aquí para convertir tus ideas en realidad. Desde los 13 años, me he sumergido en el emocionante mundo de la programación y la tecnología, encontrando pasión en áreas como las inteligencias artificiales, la ciberseguridad, los videojuegos y el espacio. Como desarrollador web, mi objetivo es ofrecerte justo lo que necesitas. No lo sabes?¡No te preocupes! Estoy aquí para guiarte en cada paso del camino. Mi enfoque se centra en la excelencia, asegurándome de que cada proyecto sea ejecutado con precisión y atención al detalle. si quieres trabajar conmigo !CONTACTAME¡ <br><br> <div class="flex justify-center">bbecerraespitia@gmail.com</div>
+			</p>
+		</div>
+	</div>
+
+
+		</div>
+		</section>
+		<section id="Stack">
+			<div class="placeholder2">
+
+			</div>
+			<Tseccion titulo="Mi Stack"/>
+			<div class="iconos flex justify-center items-center w-1/2 mx-auto">
+				
+				<Icon nombre="python" imagePath="../multimedia/images/icons/pythonicon.webp" />
+
+				<Icon nombre="css" imagePath="../multimedia/images/icons/css.png" />
+	
+				
+
+				<Icon nombre="javascript" imagePath="../multimedia/images/icons/free-javascript.webp" />
+				
+				<Icon nombre="HTML5" imagePath="../multimedia/images/icons/html5.webp" />
+
+				<Icon nombre="jmeter" imagePath="../multimedia/images/icons/jmeter_square.png" />
+
+				<Icon nombre="laravel" imagePath="../multimedia/images/icons/laravelicon.webp" />
+
+				<Icon nombre="tailwind" imagePath="../multimedia/images/icons/tailwind-cssicon.png" />
+				<Icon 	nombre="astro"
+					imagePath="../multimedia/images/icons/astro.png";
+					correccionvertical="2vw"
+				/>
+
+				<Icon nombre="sql" imagePath="../multimedia/images/icons/sqlicon.png" />
+
+				
+
+				<Icon nombre="php" imagePath="../multimedia/images/icons/php.png" />
+			</div>
+
+		</section>
+		
+
+		
+		<section id="proyectos" class="proyectos">
+			<div class="placeholder2">
+
+			</div>
+			<Tseccion titulo="Proyectos"/>
+			<Proyecto
+				projectName="Horario Sash"
+				;
+				projetLink="https://github.com/BeosSantiagoBecerraEspitia/Horariosahs"
+				;
+				descripcion="Proyecto realizado Para el cide para la organizacion de horario de instructores , aulas fichas , y materias utilizando php y laravel"
+				;
+			/>
+
+			
+		</section>
+
+		<section id="Estudios" class="flex justify-center items-center ">
+			<div class="placeholder2 ">
+
+			</div>
+			<Tseccion titulo="Estudios"/>
+
+			<div class="bandejaestudios flex justify-center items-center ">
+				<Estudio
+
+				titulo="TECNOLOGO EN ANALISIS Y DESARROLLO DE INFORMACION"
+				institucion="SENA"
+				fecha="ABRIL DEL 2022 - OCTUBRE DEL 2023, SOACHA(CUNDINAMARCA)"
+				
+				/>
+
+				<Estudio
+
+				titulo="TECNICO EN DESARROLLO DE SOFTWARE"
+				institucion="SENA"
+				fecha="ENERO DEL 2020 - DICIEMBRE DEL 2021 , SOACHA(CUNDINAMARCA)"
+				
+				/>
+
+				<Estudio
+
+				titulo="iNGENIERO EN SISTEMAS"
+				institucion="UNIVERSIDAD CUN"
+				fecha="ABRIL DEL 2024 - ACTUALIDAD , BOGOTA(CUNDINAMARCA)"
+				
+				/>
+			</div>
+		</section>
+		<section id="Experiencia" class="experiencia flex justify-center items-center">
+			<div class="placeholder2">
+
+			</div>
+			<Tseccion titulo="Experiencia"/>
+			<ExperienceCard
+				empresa="Camara de comercio de bogota"
+				imagePath="../multimedia/images/logos/ccblogo.png"
+				;
+				cargo="Junior QA"
+				;
+				contenido="Durante mi tiempo en la empresa, desempeñé un papel  en el equipo encargado de garantizar la calidad del software. Desde la creación de casos de prueba hasta la ejecución meticulosa y la asesoría estratégica. Utilizando metodologías ágiles, analicé requerimientos, grabé procesos para automatización y elaboré informes detallados sobre pruebas de carga."
+				;
+			/>
+			
+
+		</section>
+
+		
+	</main>
+	
+
+	
+	<Footer
+	
+	/>
+	<div class="stars"></div>
+<div class="clouds"></div>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1rem;
+
+		max-width: calc(100% - 2rem);
+		color: white;
+		font-size: 2rem;
+		line-height: 1.6;
+	}
+
+	.header-placeholder{
+		height: 10vh;	
+		min-width: 100%;	
+	}
+	.placeholder2{
+		height: 5rem;
+		width: 100%;
+	}
+
+	.instructions {
+		margin-bottom: 2rem;
+		border: 1px solid rgba(var(--accent-light), 25%);
+		background: linear-gradient(
+			rgba(var(--accent-dark), 66%),
+			rgba(var(--accent-dark), 33%)
+		);
+		padding: 1.5rem;
+		border-radius: 8px;
+	}
+	.instructions code {
+		font-size: 0.8em;
+		font-weight: bold;
+		background: rgba(var(--accent-light), 12%);
+		color: rgb(var(--accent-light));
+		border-radius: 4px;
+		padding: 0.3em 0.4em;
+	}
+	.instructions strong {
+		color: rgb(var(--accent-light));
+	}
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 2rem;
+		padding: 0;
+	}
+
+	.presentacion_principal {
+		width: 100%;
+	}
+
+	.prev {
+		width: 0;
+		height: 0;
+		border-top: 18px solid transparent; /* Lado inferior del triángulo */
+		border-bottom: 18px solid transparent; /* Lado superior del triángulo */
+		border-right: 36px solid rgb(0, 1, 15); /* Lado derecho del triángulo (color de fondo del botón) */
+		cursor: pointer;
+		z-index: auto;
+		position: relative;
+		
+	}
+
+	.prev::before{
+		content: "";
+		width: 105%;
+		height: 110%;
+		border-top: 25px solid transparent; /* Lado inferior del triángulo */
+		border-bottom: 25px solid transparent; /* Lado superior del triángulo */
+		border-right: 50px solid #ebebff; 
+		position: absolute;
+		z-index: -2;
+		top: -25px;
+    	left: -10px;	
+		border-radius: 2px;
+		filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+	}
+
+	.next {
+		width: 0;
+		height: 0;
+		border-top: 18px solid transparent; /* Lado inferior del triángulo */
+		border-bottom: 18px solid transparent; /* Lado superior del triángulo */
+		border-left: 36px solid rgb(0, 1, 15); /* Lado derecho del triángulo (color de fondo del botón) */
+		cursor: pointer;
+		
+		position: relative;
+		
+	}
+
+	.next::before{
+		content: "";
+		width: 105%;
+		height: 110%;
+		border-top: 25px solid transparent; /* Lado inferior del triángulo */
+		border-bottom: 25px solid transparent; /* Lado superior del triángulo */
+		border-left: 50px solid rgb(228, 228, 240); 
+		position: absolute;
+		z-index: -2;
+		top: -25px;
+    	left: -41px;	
+		border-radius: 2px;
+		filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+	}
+
+	.nombre{
+		justify-content: center;
+		text-justify: center;
+		display: flex;
+		font-weight: bold;
+		text-wrap: wrap;
+		
+	}
+
+
+	.slider_con_titulos {
+
+		justify-content: center;
+		align-items: center;
+		margin-left: auto;	
+		margin-right: auto;
+		padding: 0px;
+		
+	}
+	.limiteslider {
+		overflow: hidden;
+		width: 450px;
+		margin: 20px;
+		background: rgba(18, 0, 138, 0.45);
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 3px );
+-webkit-backdrop-filter: blur( 3px );
+border-radius: 10px;
+border: 2px solid rgba( 255, 255, 255, 0.18 );	
+		font: 90% 'Ubuntu Mono' ,monospace;
+
+		}
+	.titulos {
+		display: flex;
+		transition: transform 0.3s ease; /* cambiare esto despues */
+	}
+
+	.tituloslide {
+		flex: 0 0 100%;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		
+		/*position: absolute;*/
+		filter: contrast(110%) grayscale(60%) saturate(200%) drop-shadow(0px 0px 10px rgb(76, 0, 255));
+
+			-webkit-animation: text-flicker-in-glow 3s linear both;
+	        animation: text-flicker-in-glow 3s linear both;
+	}
+	
+	@-webkit-keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}
+@keyframes text-flicker-in-glow {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  10.1% {
+    opacity: 1;
+    text-shadow: none;
+  }
+  10.2% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  20.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.25);
+  }
+  20.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  30.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.5% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  30.6% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  45.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.45), 0 0 60px rgba(255, 255, 255, 0.25);
+  }
+  55.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  57.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35);
+  }
+  60.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  65.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.35), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  75.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  77.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.55), 0 0 60px rgba(255, 255, 255, 0.4), 0 0 110px rgba(255, 255, 255, 0.2), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  85.1% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86% {
+    opacity: 0;
+    text-shadow: none;
+  }
+  86.1% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.45), 0 0 110px rgba(255, 255, 255, 0.25), 0 0 100px rgba(255, 255, 255, 0.1);
+  }
+}
+
+	.descripcionyfoto {
+		flex-direction: row;
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	.profile_picture {
+		height: 60vh;
+		width: auto;
+		min-width: 100px;
+		max-height: 1062px;
+		max-width: fit-content;
+		margin: 3vw;
+
+		display: block;
+	}
+	.profile_picture img {
+		height: auto;
+		width: auto;
+		filter: contrast(110%) grayscale(60%) saturate(200%) hue-rotate(-10deg)
+			drop-shadow(0px 0px 30px rgba(147, 221, 255, 0.788) );
+		border-radius: 50vh;
+		image-rendering: -webkit-optimize-contrast;
+		max-width: 100%;
+		max-height: 100%;
+		border-width: 5px;
+		border-style: double;
+		
+	}
+
+	.redes{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		height: 15vh;
+		width: 70vw;
+	}
+
+	.red{
+		border-color: rgba(79,0,255,1);
+		height: 80px;
+		border-radius: 10px;
+		border-width: 5px;
+		width: 30%;
+		margin: 1%;
+		display: flex;
+		align-items: center;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		filter: contrast(110%) grayscale(60%) saturate(200%)
+			drop-shadow(0px 0px 10px rgb(76, 0, 255));
+	}
+
+	.red a{
+		width: 100%;
+		align-items: center;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		display: flex;
+	}
+
+	.red a p{
+		width: fit-content;
+		font-family:'Ubuntu Mono',monospace; 
+		font-weight: bold;
+		font-style: italic;
+		margin: auto;
+	}
+
+	.logo{
+		height: 50px;
+		width: 50px;
+		margin: 10px;
+	}
+
+	.logo img{
+		color: rgb(255, 255, 255);
+		filter: invert(14%) sepia(83%) saturate(7462%) hue-rotate(261deg) brightness(92%) contrast(139%);
+		
+	}
+
+	.duo{
+		border-width: 2px;
+		border-radius: 10px;
+		border-color: rgba(79,0,255,1);
+	}
+
+	.descripcion_profesional {
+		display: inline;
+		float: right;
+		width: 70%;
+		margin: 3vw;
+		align-self: center;
+		font-family: 'Ubuntu Mono',monospace;
+		color: #f4fdfd;
+
+	}
+
+	@media (min-height: 100vw) {
+		.profile_picture {
+			height: fit-content;
+		}
+		.descripcion_profesional {
+			width: 80%;
+		}
+
+		.header-placeholder{
+			display: none;
+		}
+
+		.iconos{
+			width: 80vw;
+		}
+
+	}
+
+	.iconos{
+		flex-wrap: wrap;
+	}
+
+	.experiencia {
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.proyectos {
+
+		margin-right: auto;
+		margin-left: auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	@media (min-height: 100vw), (max-width: 640px) {
+		.experiencia {
+			width: 100%;
+			margin: 0%;
+		}
+
+		.proyectos {
+			width: 100%;
+			margin: 0%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.placeholder2{
+			height: 40px;
+
+		}
+
+		.red{
+			width: 90%;
+		}
+
+		.redes{
+			height: fit-content;
+		}
+	}
+
+
+	#Estudios{
+		flex-wrap: wrap;
+	}
+
+	.bandejaestudios{
+		background-color: rgba(71, 61, 139, 0.685);
+		align-items: flex-end;
+		min-width: 70vw;
+		width: 70vw;
+		min-height: 60vh;
+		border-radius: 2vw;
+		backdrop-filter: blur( 2px );
+		box-shadow: 5px 5px 19px #0d081d, -5px -5px 19px #331e75;
+		flex-wrap: wrap;
+	}
+
+
+
+
+
+
+
+
+
+
+	@keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-webkit-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-moz-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+@-ms-keyframes move-twink-back {
+    from {background-position:0 0;}
+    to {background-position:-10000px 5000px;}
+}
+
+@keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-webkit-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-moz-keyframes move-clouds-back {
+    from {background-position:0 0;}
+    to {background-position:10000px 0;}
+}
+@-ms-keyframes move-clouds-back {
+    from {background-position: 0;}
+    to {background-position:10000px 0;}
+}
+
+.stars, .twinkling, .clouds {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100vw;
+  min-height:100%;
+  height: 100%;
+  display:block;
+  
+}
+
+.stars {
+  background:#00000000 url(../multimedia/images/stars.png) repeat top center;
+  z-index:-3;
+}
+
+
+
+.clouds{	
+    background:transparent url(../multimedia/images/clouds3.png) repeat top center; 
+    z-index:-6;
+	filter: saturate(100%) hue-rotate(240deg);
+  -moz-animation:move-clouds-back 200s linear infinite;
+  -ms-animation:move-clouds-back 200s linear infinite;
+  -o-animation:move-clouds-back 200s linear infinite;
+  -webkit-animation:move-clouds-back 200s linear infinite;
+  animation:move-clouds-back 200s linear infinite;
+   opacity: 0.7;
+}
+
+.red:hover {
+	-webkit-animation: shake-top 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+	        animation: shake-top 0.8s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+}
+
+@-webkit-keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+@keyframes shake-top {
+  0%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+    -webkit-transform-origin: 50% 0;
+            transform-origin: 50% 0;
+  }
+  10% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+  20%,
+  40%,
+  60% {
+    -webkit-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+  30%,
+  50%,
+  70% {
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+  }
+  80% {
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  90% {
+    -webkit-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+</style>
+
+<script is:inline>
+	let currentIndex = 0;
+
+	function changeSlide(direction) {
+		const slides = document.querySelectorAll(".tituloslide");
+		const totalSlides = slides.length;
+
+		currentIndex += direction;
+
+		if (currentIndex < 0) {
+			currentIndex = totalSlides - 1;
+		} else if (currentIndex >= totalSlides) {
+			currentIndex = 0;
+		}
+
+		const slideWidth = slides[0].offsetWidth;
+		const offset = -currentIndex * slideWidth;
+
+		document.querySelector(".titulos").style.transform =
+			`translateX(${offset}px)`;
+		console.log(currentIndex);
+		console.log(slides)
+	}
+</script>
