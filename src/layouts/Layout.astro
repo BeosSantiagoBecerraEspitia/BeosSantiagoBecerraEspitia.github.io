@@ -15,6 +15,7 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<script >import '@fontsource/paytone-one';import '@fontsource/ubuntu-mono/400.css'; import '@fontsource/ubuntu-mono/700.css';</script>
 	</head>
 	<body>
 		<slot />
@@ -22,9 +23,6 @@ const { title } = Astro.props;
 </html>
 <style is:global>
 
-@import '@fontsource/paytone-one';
-@import '@fontsource/ubuntu-mono/400.css';
-@import '@fontsource/ubuntu-mono/700.css';
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
