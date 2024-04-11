@@ -63,7 +63,6 @@ const { projectName , projetLink , descripcion } = Astro.props;
   flex-wrap: wrap;
   margin-top:5vw ;
   margin: 3vw;
-  
   z-index: auto;
 
 }
@@ -94,8 +93,9 @@ text-decoration-line: underline;
 height:calc(var(--veintealtura)*2.8);
 width: 80%;
 margin: 2%;
-font: 2vw 'Ubuntu Mono' ,monospace;
+font: 1.5vw 'Ubuntu Mono' ,monospace;
 margin: auto;
+overflow: hidden;
 }
 
 
@@ -151,6 +151,12 @@ box-shadow: 13px 13px 33px #09001d, -13px -13px 33px #230075;
         --ProyectCard-width:70vw;
         --ProyectCard-height:calc(var(--ProyectCard-width) / 1.5);
       }
+
+      .ProyectContent{
+  font-size: 40%;
+  font: 1.2rem 'Ubuntu Mono' ,monospace;
+}
+
 }
 
 @media (min-height: 120vw), (max-width: 640px) {
@@ -180,6 +186,7 @@ box-shadow: 13px 13px 33px #09001d, -13px -13px 33px #230075;
 
 .ProyectContent{
   font-size: 40%;
+  font: 2rem 'Ubuntu Mono' ,monospace;
 }
 
 }
