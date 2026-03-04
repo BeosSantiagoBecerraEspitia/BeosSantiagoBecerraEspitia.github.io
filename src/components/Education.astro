@@ -1,0 +1,163 @@
+---
+const education = [
+  {
+    degree: 'Bachelor of Systems Engineering',
+    institution: 'Universidad Distrital Francisco José de Caldas',
+    location: 'Bogotá, Colombia',
+    period: '2015 — 2020',
+    description:
+      'Graduated with honours. Focused on software architecture, distributed systems, computer networks, and operating systems. Final thesis on container orchestration and microservices deployment strategies.',
+    highlights: [
+      'Graduated with Honours (GPA: 4.3/5.0)',
+      'Thesis: "Orchestrating microservices with Kubernetes in a cloud-native environment"',
+      'Active member of the Systems Engineering student research group',
+    ],
+    icon: '🎓',
+  },
+];
+
+const certifications = [
+  {
+    name: 'AWS Certified Solutions Architect — Professional',
+    issuer: 'Amazon Web Services',
+    year: '2023',
+    badge: '🏅',
+    color: 'from-orange-500/20 to-yellow-500/10',
+    border: 'border-orange-500/20',
+    text: 'text-orange-400',
+  },
+  {
+    name: 'Certified Kubernetes Administrator (CKA)',
+    issuer: 'Cloud Native Computing Foundation',
+    year: '2022',
+    badge: '🏅',
+    color: 'from-blue-500/20 to-cyan-500/10',
+    border: 'border-blue-500/20',
+    text: 'text-blue-400',
+  },
+  {
+    name: 'HashiCorp Certified: Terraform Associate',
+    issuer: 'HashiCorp',
+    year: '2022',
+    badge: '🏅',
+    color: 'from-purple-500/20 to-violet-500/10',
+    border: 'border-purple-500/20',
+    text: 'text-purple-400',
+  },
+  {
+    name: 'Google Professional Cloud DevOps Engineer',
+    issuer: 'Google Cloud',
+    year: '2023',
+    badge: '🏅',
+    color: 'from-green-500/20 to-teal-500/10',
+    border: 'border-green-500/20',
+    text: 'text-green-400',
+  },
+  {
+    name: 'AWS Certified DevOps Engineer — Professional',
+    issuer: 'Amazon Web Services',
+    year: '2023',
+    badge: '🏅',
+    color: 'from-orange-500/20 to-yellow-500/10',
+    border: 'border-orange-500/20',
+    text: 'text-orange-400',
+  },
+  {
+    name: 'Certified Kubernetes Security Specialist (CKS)',
+    issuer: 'Cloud Native Computing Foundation',
+    year: '2024',
+    badge: '🏅',
+    color: 'from-red-500/20 to-pink-500/10',
+    border: 'border-red-500/20',
+    text: 'text-red-400',
+  },
+];
+---
+
+<section id="education" class="py-24 bg-dark-950">
+  <div class="section-container">
+    <div class="mb-12">
+      <p class="section-subtitle">Academic & Professional</p>
+      <h2 class="section-title">Education & Certifications</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-2">
+        <h3 class="text-lg font-semibold text-dark-200 mb-6 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+            <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
+          </svg>
+          Academic Background
+        </h3>
+
+        {
+          education.map((edu) => (
+            <div class="card group">
+              <div class="flex items-start gap-4 mb-4">
+                <div class="text-3xl">{edu.icon}</div>
+                <div>
+                  <h4 class="text-white font-bold text-lg leading-tight group-hover:text-primary-300 transition-colors">
+                    {edu.degree}
+                  </h4>
+                  <p class="text-primary-400 font-medium mt-1">{edu.institution}</p>
+                  <div class="flex items-center gap-3 mt-2 text-xs text-dark-500 font-mono">
+                    <span class="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                      </svg>
+                      {edu.location}
+                    </span>
+                    <span>·</span>
+                    <span>{edu.period}</span>
+                  </div>
+                </div>
+              </div>
+
+              <p class="text-dark-400 text-sm leading-relaxed mb-4">{edu.description}</p>
+
+              <ul class="space-y-1.5">
+                {edu.highlights.map((h) => (
+                  <li class="flex items-start gap-2 text-sm text-dark-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-primary-500 mt-0.5 shrink-0" viewBox="0 0 20 20" fill="currentColor">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                    {h}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="lg:col-span-3">
+        <h3 class="text-lg font-semibold text-dark-200 mb-6 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+          </svg>
+          Professional Certifications
+        </h3>
+
+        <div class="grid sm:grid-cols-2 gap-4">
+          {
+            certifications.map((cert) => (
+              <div class={`rounded-xl p-4 bg-gradient-to-br ${cert.color} border ${cert.border} hover:scale-[1.02] transition-transform duration-200`}>
+                <div class="flex items-start gap-3">
+                  <span class="text-2xl">{cert.badge}</span>
+                  <div>
+                    <h4 class={`font-semibold text-sm text-white leading-tight mb-1`}>
+                      {cert.name}
+                    </h4>
+                    <p class={`text-xs ${cert.text} font-mono`}>{cert.issuer}</p>
+                    <p class="text-dark-500 text-xs mt-1">{cert.year}</p>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

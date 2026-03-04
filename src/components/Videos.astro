@@ -1,0 +1,156 @@
+---
+const videos = [
+  {
+    id: 'placeholder-1',
+    title: 'Kubernetes for Beginners: From Zero to Production',
+    description:
+      'A comprehensive walkthrough of Kubernetes core concepts: Pods, Deployments, Services, ConfigMaps, and Ingress. Perfect for developers making the move to cloud-native.',
+    duration: '48:32',
+    views: '12.4K',
+    category: 'Kubernetes',
+    thumbnail: null,
+  },
+  {
+    id: 'placeholder-2',
+    title: 'Terraform Best Practices in 2024',
+    description:
+      'Deep dive into Terraform module design, state management, workspace strategies, and CI/CD integration patterns for large-scale infrastructure teams.',
+    duration: '36:15',
+    views: '8.7K',
+    category: 'IaC',
+    thumbnail: null,
+  },
+  {
+    id: 'placeholder-3',
+    title: 'Building a GitOps Pipeline with ArgoCD',
+    description:
+      'Step-by-step guide to implementing GitOps on Kubernetes using ArgoCD. Covers app-of-apps pattern, sync policies, RBAC, and progressive delivery with Rollouts.',
+    duration: '54:08',
+    views: '9.1K',
+    category: 'GitOps',
+    thumbnail: null,
+  },
+  {
+    id: 'placeholder-4',
+    title: 'AWS Cost Optimisation: Practical Strategies',
+    description:
+      'Real-world techniques to reduce AWS bills by 30-50%. Covers Reserved Instances, Savings Plans, S3 lifecycle policies, right-sizing, and Spot Instance strategies.',
+    duration: '29:44',
+    views: '15.2K',
+    category: 'AWS',
+    thumbnail: null,
+  },
+  {
+    id: 'placeholder-5',
+    title: 'Docker & Docker Compose: Full Course',
+    description:
+      'Everything you need to know about containerising applications: multi-stage builds, networking, volumes, secrets management, and orchestration with Docker Compose.',
+    duration: '1:12:30',
+    views: '21.8K',
+    category: 'Docker',
+    thumbnail: null,
+  },
+  {
+    id: 'placeholder-6',
+    title: 'CI/CD with GitHub Actions: Advanced Patterns',
+    description:
+      'Advanced GitHub Actions workflows: matrix builds, reusable workflows, environment protection rules, OIDC authentication with AWS, and self-hosted runners.',
+    duration: '41:55',
+    views: '11.3K',
+    category: 'CI/CD',
+    thumbnail: null,
+  },
+];
+
+const categoryColors: Record<string, string> = {
+  Kubernetes: 'bg-blue-500/10 text-blue-300 border-blue-500/20',
+  IaC: 'bg-purple-500/10 text-purple-300 border-purple-500/20',
+  GitOps: 'bg-green-500/10 text-green-300 border-green-500/20',
+  AWS: 'bg-orange-500/10 text-orange-300 border-orange-500/20',
+  Docker: 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20',
+  'CI/CD': 'bg-pink-500/10 text-pink-300 border-pink-500/20',
+};
+---
+
+<section id="videos" class="py-24 bg-dark-900/50">
+  <div class="section-container">
+    <div class="mb-12 flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
+      <div>
+        <p class="section-subtitle">YouTube Channel</p>
+        <h2 class="section-title">Latest Videos</h2>
+        <div class="section-divider mb-0"></div>
+      </div>
+      <a
+        href="https://youtube.com/@beos-becerra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary self-start sm:self-auto shrink-0"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-red-500" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+        View Channel
+      </a>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        videos.map((video) => (
+          <article class="card group flex flex-col p-0 overflow-hidden">
+            <div class="relative aspect-video bg-dark-800 flex items-center justify-center overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-br from-primary-900/40 to-dark-900/80"></div>
+
+              <div class="absolute inset-0 flex items-center justify-center">
+                <div class="w-16 h-16 rounded-full bg-dark-900/80 border border-dark-700 flex items-center justify-center group-hover:bg-primary-600 group-hover:border-primary-500 transition-all duration-300 group-hover:scale-110">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-white ml-1" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="absolute top-3 left-3">
+                <span class={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${categoryColors[video.category] ?? 'bg-dark-700 text-dark-300 border-dark-600'}`}>
+                  {video.category}
+                </span>
+              </div>
+
+              <div class="absolute bottom-3 right-3 bg-dark-900/80 text-white text-xs font-mono px-2 py-0.5 rounded">
+                {video.duration}
+              </div>
+            </div>
+
+            <div class="p-5 flex flex-col flex-1">
+              <h3 class="text-white font-bold text-base leading-tight group-hover:text-primary-300 transition-colors mb-2">
+                {video.title}
+              </h3>
+              <p class="text-dark-400 text-sm leading-relaxed flex-1 mb-4">
+                {video.description}
+              </p>
+
+              <div class="flex items-center justify-between pt-4 border-t border-dark-800">
+                <div class="flex items-center gap-1.5 text-dark-500 text-xs font-mono">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
+                    <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd" />
+                  </svg>
+                  {video.views} views
+                </div>
+                <a
+                  href={`https://youtube.com/watch?v=${video.id}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-xs text-primary-400 hover:text-primary-300 font-medium transition-colors flex items-center gap-1"
+                >
+                  Watch now
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

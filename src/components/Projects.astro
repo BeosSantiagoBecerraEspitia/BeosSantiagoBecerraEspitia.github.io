@@ -1,0 +1,168 @@
+---
+const projects = [
+  {
+    title: 'CloudOps Automation Platform',
+    description:
+      'A self-service internal developer platform built on top of Kubernetes, enabling teams to provision environments, manage secrets, and deploy applications through a unified CLI and web dashboard.',
+    tags: ['Kubernetes', 'Golang', 'Terraform', 'React', 'PostgreSQL'],
+    links: {
+      github: 'https://github.com/beos-becerra/cloudops-platform',
+      demo: null,
+    },
+    featured: true,
+    icon: '☁️',
+    stats: { stars: '48', forks: '12' },
+  },
+  {
+    title: 'GitOps Pipeline Toolkit',
+    description:
+      'A collection of reusable GitHub Actions workflows and ArgoCD ApplicationSets for implementing GitOps across multi-cloud environments. Includes drift detection, rollback automation, and Slack notifications.',
+    tags: ['GitHub Actions', 'ArgoCD', 'Helm', 'YAML', 'Python'],
+    links: {
+      github: 'https://github.com/beos-becerra/gitops-toolkit',
+      demo: null,
+    },
+    featured: true,
+    icon: '🔄',
+    stats: { stars: '31', forks: '9' },
+  },
+  {
+    title: 'Infra Cost Monitor',
+    description:
+      'A serverless Lambda function that scrapes AWS Cost Explorer, aggregates spending by team tags, and sends weekly Slack digests with budget alerts and optimisation recommendations.',
+    tags: ['AWS Lambda', 'Python', 'AWS Cost Explorer', 'Slack API', 'Terraform'],
+    links: {
+      github: 'https://github.com/beos-becerra/infra-cost-monitor',
+      demo: null,
+    },
+    featured: false,
+    icon: '💰',
+    stats: { stars: '22', forks: '5' },
+  },
+  {
+    title: 'K8s Security Hardener',
+    description:
+      'CLI tool that audits Kubernetes clusters against CIS benchmarks, generates remediation scripts, and produces HTML/JSON compliance reports. Integrates with CI/CD for policy-as-code enforcement.',
+    tags: ['Go', 'Kubernetes', 'CIS Benchmarks', 'CLI', 'JSON'],
+    links: {
+      github: 'https://github.com/beos-becerra/k8s-security-hardener',
+      demo: null,
+    },
+    featured: false,
+    icon: '🔒',
+    stats: { stars: '17', forks: '3' },
+  },
+  {
+    title: 'Terraform Module Registry',
+    description:
+      'Private Terraform module registry with versioning, tagging, and a searchable UI. Modules cover VPC, EKS, RDS, IAM, and CloudFront patterns following AWS Well-Architected best practices.',
+    tags: ['Terraform', 'HCL', 'AWS', 'Go', 'Docker'],
+    links: {
+      github: 'https://github.com/beos-becerra/tf-module-registry',
+      demo: null,
+    },
+    featured: false,
+    icon: '📦',
+    stats: { stars: '14', forks: '6' },
+  },
+  {
+    title: 'Observability Stack Bootstrapper',
+    description:
+      'Helm chart and Ansible playbooks that deploy a full observability stack (Prometheus, Grafana, Loki, Tempo, Alertmanager) on any Kubernetes cluster in under 10 minutes.',
+    tags: ['Helm', 'Prometheus', 'Grafana', 'Loki', 'Ansible'],
+    links: {
+      github: 'https://github.com/beos-becerra/obs-stack',
+      demo: null,
+    },
+    featured: false,
+    icon: '📊',
+    stats: { stars: '29', forks: '8' },
+  },
+];
+---
+
+<section id="projects" class="py-24 bg-dark-900/50">
+  <div class="section-container">
+    <div class="mb-12">
+      <p class="section-subtitle">What I've Built</p>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {
+        projects.map((project) => (
+          <article class={`card flex flex-col group relative ${project.featured ? 'md:col-span-1' : ''}`}>
+            {project.featured && (
+              <div class="absolute top-4 right-4 flex items-center gap-1 px-2 py-0.5 bg-primary-500/20 text-primary-300 text-xs font-mono rounded-full border border-primary-500/30">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+                Featured
+              </div>
+            )}
+
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-xl bg-dark-800 border border-dark-700 flex items-center justify-center text-2xl group-hover:border-primary-500/40 transition-colors">
+                {project.icon}
+              </div>
+              <div class="flex items-center gap-3 ml-auto text-dark-500 text-xs font-mono">
+                <span class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  {project.stats.stars}
+                </span>
+                <span class="flex items-center gap-1">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.559 8.855c.166 1.751.374 3.498.837 5.18.313 1.14.765 2.25 1.424 3.214C8.468 18.653 9.546 19.5 11 19.5v-3l4 4-4 4v-3c-2.184 0-3.72-1.22-4.78-2.804C5.034 16.032 4.51 14.63 4.142 13.19a36.01 36.01 0 01-.886-5.505L2 8.855l3.559-3.559L9.118 8.855H5.559zm12.882 6.29c-.166-1.751-.374-3.498-.837-5.18-.313-1.14-.765-2.25-1.424-3.214C14.532 5.347 13.454 4.5 12 4.5V7.5l-4-4 4-4v3c2.184 0 3.72 1.22 4.78 2.804 1.186 1.664 1.71 3.066 2.078 4.506.37 1.44.614 2.949.886 5.505L21 15.145l-3.559 3.559-3.559-3.559h3.559z"/>
+                  </svg>
+                  {project.stats.forks}
+                </span>
+              </div>
+            </div>
+
+            <h3 class="text-lg font-bold text-white group-hover:text-primary-300 transition-colors mb-2">
+              {project.title}
+            </h3>
+            <p class="text-dark-400 text-sm leading-relaxed flex-1 mb-4">{project.description}</p>
+
+            <div class="flex flex-wrap gap-1.5 mb-5">
+              {project.tags.map((tag) => (
+                <span class="tag text-xs">{tag}</span>
+              ))}
+            </div>
+
+            <div class="flex items-center gap-3 pt-4 border-t border-dark-800">
+              <a
+                href={project.links.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex items-center gap-2 text-sm text-dark-300 hover:text-white transition-colors font-medium"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                </svg>
+                View Source
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 text-center">
+      <a
+        href="https://github.com/beos-becerra"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-secondary inline-flex"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+        </svg>
+        See all projects on GitHub
+      </a>
+    </div>
+  </div>
+</section>
