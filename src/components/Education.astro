@@ -1,75 +1,73 @@
 ---
 const education = [
   {
-    degree: 'Bachelor of Systems Engineering',
-    institution: 'Universidad Distrital Francisco José de Caldas',
+    degree: "Bachelor's in Systems Engineering",
+    institution: 'Universidad de la CUN',
     location: 'Bogotá, Colombia',
-    period: '2015 — 2020',
+    period: 'May 2024 — Present',
     description:
-      'Graduated with honours. Focused on software architecture, distributed systems, computer networks, and operating systems. Final thesis on container orchestration and microservices deployment strategies.',
+      'Currently pursuing a degree focused on software development, cloud computing, databases, and system design.',
     highlights: [
-      'Graduated with Honours (GPA: 4.3/5.0)',
-      'Thesis: "Orchestrating microservices with Kubernetes in a cloud-native environment"',
-      'Active member of the Systems Engineering student research group',
+      'Coursework: OOP, Databases, Networks, Software Design, Cloud Computing',
+      'Strong focus on logical thinking and problem solving',
     ],
     icon: '🎓',
+  },
+  {
+    degree: 'Technologist in Systems Analysis and Development',
+    institution: 'SENA',
+    location: 'Bogotá, Colombia',
+    period: 'Apr 2022 — Oct 2023',
+    description:
+      'Hands-on training in full-stack development, databases, and software engineering practices.',
+    highlights: [
+      'Experience with SQL, PHP, JavaScript, and Laravel',
+      'Worked with Agile methodologies and project management',
+    ],
+    icon: '💻',
+  },
+  {
+    degree: 'Software Development Technician',
+    institution: 'SENA',
+    location: 'Bogotá, Colombia',
+    period: 'Jan 2021 — Dec 2022',
+    description:
+      'Foundational training in programming, web development, and software design.',
+    highlights: [
+      'Built projects using HTML, CSS, and JavaScript',
+      'Developed analytical and problem-solving skills',
+    ],
+    icon: '🛠️',
   },
 ];
 
 const certifications = [
   {
-    name: 'AWS Certified Solutions Architect — Professional',
+    name: 'AWS Certified Solutions Architect – Associate',
     issuer: 'Amazon Web Services',
-    year: '2023',
+    year: '2024',
     badge: '🏅',
     color: 'from-orange-500/20 to-yellow-500/10',
     border: 'border-orange-500/20',
     text: 'text-orange-400',
   },
   {
-    name: 'Certified Kubernetes Administrator (CKA)',
-    issuer: 'Cloud Native Computing Foundation',
-    year: '2022',
+    name: 'AWS Certified Cloud Practitioner',
+    issuer: 'Amazon Web Services',
+    year: '2024',
+    badge: '🏅',
+    color: 'from-orange-500/20 to-yellow-500/10',
+    border: 'border-orange-500/20',
+    text: 'text-orange-400',
+  },
+  {
+    name: 'Performance Testing with Apache JMeter',
+    issuer: 'Udemy',
+    year: '2024',
     badge: '🏅',
     color: 'from-blue-500/20 to-cyan-500/10',
     border: 'border-blue-500/20',
     text: 'text-blue-400',
-  },
-  {
-    name: 'HashiCorp Certified: Terraform Associate',
-    issuer: 'HashiCorp',
-    year: '2022',
-    badge: '🏅',
-    color: 'from-purple-500/20 to-violet-500/10',
-    border: 'border-purple-500/20',
-    text: 'text-purple-400',
-  },
-  {
-    name: 'Google Professional Cloud DevOps Engineer',
-    issuer: 'Google Cloud',
-    year: '2023',
-    badge: '🏅',
-    color: 'from-green-500/20 to-teal-500/10',
-    border: 'border-green-500/20',
-    text: 'text-green-400',
-  },
-  {
-    name: 'AWS Certified DevOps Engineer — Professional',
-    issuer: 'Amazon Web Services',
-    year: '2023',
-    badge: '🏅',
-    color: 'from-orange-500/20 to-yellow-500/10',
-    border: 'border-orange-500/20',
-    text: 'text-orange-400',
-  },
-  {
-    name: 'Certified Kubernetes Security Specialist (CKS)',
-    issuer: 'Cloud Native Computing Foundation',
-    year: '2024',
-    badge: '🏅',
-    color: 'from-red-500/20 to-pink-500/10',
-    border: 'border-red-500/20',
-    text: 'text-red-400',
   },
 ];
 ---
@@ -82,8 +80,8 @@ const certifications = [
       <div class="section-divider"></div>
     </div>
 
-    <div class="grid lg:grid-cols-5 gap-8">
-      <div class="lg:col-span-2">
+<div class="flex flex-col gap-12">
+        <div class="lg:col-span-2">
         <h3 class="text-lg font-semibold text-dark-200 mb-6 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-primary-400" viewBox="0 0 20 20" fill="currentColor">
             <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z" />
@@ -139,7 +137,7 @@ const certifications = [
           Professional Certifications
         </h3>
 
-        <div class="grid sm:grid-cols-2 gap-4">
+        <div class="grid sm:grid-cols-3 gap-4">
           {
             certifications.map((cert) => (
               <div class={`rounded-xl p-4 bg-gradient-to-br ${cert.color} border ${cert.border} hover:scale-[1.02] transition-transform duration-200`}>
